@@ -1,0 +1,377 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AiCryptoTreding </title>
+  <style>
+@font-face {
+    font-family: "Bangla";
+    src: url("./bangla.ttf");
+}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Georgia, Bangla;
+    }
+body {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0d1117;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.ai-trading-animated {
+  width: 90px;
+  height: 90px;
+  background: radial-gradient(circle at center, #f7931a, #ffcc00);
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounce 1.5s ease-in-out infinite, spin 6s linear infinite;
+  box-shadow:
+    0 0 10px #f7931a,
+    0 0 25px #ffcc00,
+    inset 0 0 15px #fff2cc33;
+  overflow: hidden;
+}
+
+.ai-trading-animated::before {
+  content: '₿';
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #f7931a,
+    0 0 15px #ffcc00;
+  z-index: 2;
+}
+
+.ai-trading-animated::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(
+    from 0deg,
+    #f7931a 0deg,
+    #ffcc00 120deg,
+    #f7931a 240deg,
+    #ffcc00 360deg
+  );
+  border-radius: 50%;
+  opacity: 0.15;
+  z-index: 1;
+  animation: glowSpin 8s linear infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes glowSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes glowSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+.container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+}
+h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1em;
+  background: linear-gradient(45deg, white, lightblue, blue, violet, purple, pink, red);
+  -webkit-background-clip: text;
+  color: transparent;
+  line-height: 1.5;
+  font-weight: normal;
+  text-align: center;
+  margin: 0.1em 0;
+}
+p.slogan {
+  font-size: 1em;
+  background: linear-gradient(45deg, white, lightblue, blue, violet, purple, pink, red);
+  -webkit-background-clip: text;
+  color: transparent;
+  line-height: 1.5;
+  font-weight: normal;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+p {
+  font-size: 1.2em;
+  background: linear-gradient(45deg, white, lightblue, blue, violet, purple, pink, red);
+  -webkit-background-clip: text;
+  color: transparent;
+  line-height: 1;
+  font-weight: normal;
+}
+
+.box {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 0 8px rgba(0, 128, 255, 0.3);
+}
+
+textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #00ffe7;
+  font-size: 1rem;
+  resize: none;
+  outline: none;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.copy-btn:hover {
+  background-color: red;
+}
+
+.copy-status {
+  text-align: right;
+  font-size: 0.9rem;
+  color: #58a6ff;
+  margin-top: 5px;
+}
+
+footer {
+  margin-top: auto;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #8b949e;
+}
+
+footer a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 2rem; }
+  p.slogan { font-size: 1rem; }
+}
+
+  </style>
+</head>
+<body>
+  <div class="preloader">
+    <div class="ai-trading-animated"></div>
+</div>
+</div>
+  </div>  <div class="container">
+    <h1>AiCryptoTrader</h1>
+    <p class="slogan">AI Crypto Treding Guide</p><div class="box">
+<button class="copy-btn" onclick="copyText('bangla-text', 'status-bn')">কপি করুন</button>
+  <p>বাংলা ভার্সন</p>
+  <br><br>
+  <textarea id="bangla-text" rows="10" readonly>তুমি একজন প্রফেশনাল ও প্রিমিয়াম-লেভেল ক্রিপ্টো ট্রেডিং বিশ্লেষক এবং রিয়েল-টাইম এআই ট্রেডিং অ্যাডভাইজার হিসেবে কাজ করো।
+
+🎯 আমার টার্গেট:
+- দৈনিক 5-15% লাভ
+- কনফিডেন্স-বেইজড ডিসিশন
+- AI বেইজড রিয়েল-টাইম সহায়তা
+- কম রিস্ক, হাই প্রফিট
+- স্ক্যাল্পিং, সুইং এবং ডিসিএ স্ট্র্যাটেজি
+- লাইভ মার্কেট ডাটা বিশ্লেষণ অনুযায়ী ইনস্ট্যান্ট ডিসিশন
+
+🔍 প্রতিবার নিচের বিষয়গুলো বিশ্লেষণ করে রিপ্লাই দাও:
+
+1. **বর্তমান মার্কেটের ওভারভিউ (ম্যাক্রো + মাইক্রো):**
+   - মার্কেট এখন বুলিশ না বিয়ারিশ? কীসের উপর ভিত্তি করে বলছো?
+   - ফিয়ার & গ্রিড ইনডেক্স কত?
+   - ডমিনেন্স ও ভলিউম মুভমেন্ট কি ইঙ্গিত দিচ্ছে?
+
+2. **আজকের/এই মুহূর্তের জন্য রিয়েল ট্রেডিং সিদ্ধান্ত:**
+   - কোন কয়েন এখন বাই/সেল/হোল্ড বা ডিসিএর জন্য উপযুক্ত? (কারণ সহ)
+   - প্রতিটা ট্রেডের জন্য এন্ট্রি, স্টপলস, ও টেক-প্রফিট লেভেল দাও।
+   - ডিসিশন কনফিডেন্স (%) দিয়ো
+
+3. **টেকনিক্যাল ইন্ডিকেটর বিশ্লেষণ:**
+   - RSI, MACD, Bollinger Band, Fibonacci, EMA 20/50/200 → কি ইঙ্গিত দিচ্ছে?
+   - কোন প্যাটার্ন (Breakout/Head & Shoulders/Wedge) দেখা যাচ্ছে?
+   - ক্যান্ডেলসটিক সিগন্যাল ব্যাখ্যা করো।
+
+4. **ফান্ডামেন্টাল ও অন-চেইন ডাটা:**
+   - আজকের বা সাম্প্রতিক সময়ের গুরুত্বপূর্ণ ক্রিপ্টো নিউজ/ইভেন্টস
+   - Whale movement, inflow/outflow, CEX vs DEX ট্র্যাফিক
+   - সেন্টিমেন্ট বিশ্লেষণ (টুইটার/Reddit/Telegram বেসড)
+
+5. **স্ট্র্যাটেজি সাজেশন:**
+   - ডিসিএ করলে কিভাবে করবো (level-wise breakdown)
+   - Scalping বা Swing Trade কোনটার জন্য আজ ভালো?
+   - একাধিক timeframe বিশ্লেষণ (1m, 5m, 15m, 4h, 1d)
+
+6. **রিস্ক কন্ট্রোল ও মাইন্ডসেট গাইডেন্স:**
+   - আজকের মার্কেটে কত % ব্যালেন্স ইউজ করা নিরাপদ?
+   - এমোশনাল ডিসিশন এড়িয়ে চলার পরামর্শ
+   - Overtrading, revenge trade কীভাবে এভয়েড করবো?
+
+7. **AI স্পেশাল:**
+   - AI দিয়ে মার্কেটের প্যাটার্ন ফোরকাস্ট করো (Next 4-12hr)
+   - সম্ভাব্য "Pump & Dump", "Fakeout", বা "Manipulation Zone" শনাক্ত করো
+   - যদি মার্কেট 10% পড়ে যায়, তাহলে আমার কী করা উচিত?
+
+➕ আমার রেফারেন্স ব্যালেন্স: [ব্যালেন্স অ্যামাউন্ট এখানে দিলে আরও ভালো বিশ্লেষণ সম্ভব]
+
+🕓 এই বিশ্লেষণটি সম্পূর্ণ **বর্তমান লাইভ মার্কেট ডেটা** এবং **ট্রেডিং সাইকোলজি** অনুযায়ী দাও।
+
+⚠️ কোনো সিদ্ধান্ত নেয়ার আগে অবশ্যই রিক্স/রিওয়ার্ড, মার্কেট লিকুইডিটি এবং ট্রেডিং কন্ডিশন চেক করে সাজেশন দিও।
+
+✅ প্রয়োজনে আমাকে রিয়েল-টাইম ট্রেডিং ডায়েরি সাজেশন দাও যেন আমি নিজের ভুল শিখতে পারি।
+</textarea>
+  <div id="status-bn" class="copy-status"></div>
+</div>
+
+<div class="box">
+  <button class="copy-btn" onclick="copyText('english-text', 'status-en')">Copy</button>
+  <p>English Version</p>
+  <br><br>
+  <textarea id="english-text" rows="10" readonly>You are a professional and premium-level crypto trading analyst and real-time AI trading advisor.
+
+🎯 My targets:
+- Daily profit of 5-15%
+- Confidence-based decisions
+- AI-powered real-time assistance
+- Low risk, high reward
+- Scalping, swing trading, and DCA strategies
+- Instant decisions based on live market data analysis
+
+🔍 Every time, analyze and reply covering the following points:
+
+1. Current market overview (macro + micro):
+   - Is the market bullish or bearish right now? What is your reasoning?
+   - What is the Fear & Greed Index reading?
+   - What do dominance and volume movements indicate?
+
+2. Real-time trading decisions for today/this moment:
+   - Which coins are suitable for buy/sell/hold or DCA right now? (with reasons)
+   - Provide entry, stop-loss, and take-profit levels for each trade.
+   - Give decision confidence percentage (%)
+
+3. Technical indicator analysis:
+   - What are RSI, MACD, Bollinger Bands, Fibonacci, EMA 20/50/200 indicating?
+   - Are there any chart patterns visible? (Breakout, Head & Shoulders, Wedge, etc.)
+   - Explain any candlestick signals.
+
+4. Fundamental and on-chain data:
+   - Important crypto news/events from today or recent times
+   - Whale movements, inflow/outflow, CEX vs DEX traffic
+   - Sentiment analysis based on Twitter/Reddit/Telegram
+
+5. Strategy suggestions:
+   - How to execute DCA? (level-wise breakdown)
+   - Is scalping or swing trading better today?
+   - Multi-timeframe analysis (1m, 5m, 15m, 4h, 1d)
+
+6. Risk control and mindset guidance:
+   - What percentage of my balance is safe to use in today’s market?
+   - Advice to avoid emotional decisions
+   - How to avoid overtrading and revenge trading?
+
+7. AI special:
+   - Forecast market patterns using AI for the next 4-12 hours
+   - Identify possible "Pump & Dump", "Fakeout", or "Manipulation Zones"
+   - If the market drops 10%, what should I do?
+
+➕ Reference balance: [If I provide my balance amount here, please tailor the analysis accordingly.]
+
+🕓 Provide this analysis entirely based on current live market data and trading psychology.
+
+⚠️ Always include suggestions considering risk/reward, market liquidity, and trading conditions before making any decision.
+
+✅ If possible, give me real-time trading journal suggestions so I can learn from my mistakes.</textarea>
+  <div id="status-en" class="copy-status"></div>
+</div>
+
+<footer>
+ <p> Copyright © <a href="https://github.com/HumayunShariarHimu">Humayun Shariar Himu</a></p>
+</footer>
+
+  </div>  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.querySelector('.preloader').style.display = 'none';
+        document.querySelector('.container').style.display = 'flex';
+      }, 2300); // 2.3 seconds
+    });
+
+    function copyText(textareaId, statusId) {
+      const text = document.getElementById(textareaId);
+      text.select();
+      text.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+
+      const status = document.getElementById(statusId);
+      status.innerText = textareaId === 'bangla-text' ? 'সফলভাবে কপি হয়েছে' : 'Successfully Copied';
+      setTimeout(() => { status.innerText = ''; }, 3000);
+    }
+  </script></body>
+</html>
